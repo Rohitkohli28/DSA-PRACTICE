@@ -4,6 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Basic Questions/Basic Questions.iml" filepath="$PROJECT_DIR$/Basic Questions/Basic Questions.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/DSA PRACTICE.iml" filepath="$PROJECT_DIR$/.idea/DSA PRACTICE.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Pattern Question/Pattern Question.iml" filepath="$PROJECT_DIR$/Pattern Question/Pattern Question.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Pattern Question/Sliding Window/Sliding Window.iml" filepath="$PROJECT_DIR$/Pattern Question/Sliding Window/Sliding Window.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Pattern Question/Two Pointer/Two Pointer.iml" filepath="$PROJECT_DIR$/Pattern Question/Two Pointer/Two Pointer.iml" />
     </modules>
   </component>
 </project>
