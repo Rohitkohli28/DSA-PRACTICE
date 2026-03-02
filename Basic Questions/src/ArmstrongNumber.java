@@ -1,6 +1,6 @@
 public class ArmstrongNumber {
     public static void main(String[] args) {
-        int num = 153;
+        int num = 151;
         int copy = num;
         int count = 0;
         int sum = 0;
