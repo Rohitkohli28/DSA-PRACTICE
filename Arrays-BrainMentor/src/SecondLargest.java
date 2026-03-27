@@ -8,7 +8,7 @@ public class SecondLargest {
             if(i > firstLargest){ // If the current element is greater than the first largest, then update both first and second largest
                 secondLargest = firstLargest; // If the current element is greater than the first largest, then update the second largest to be the first largest
                 firstLargest = i;
-            } else if(i < firstLargest && i > secondLargest) { // If the current element is less than the first largest and greater than the second largest, then update the second largest
+            } else if(i != firstLargest && i > secondLargest) { // If the current element is less than the first largest and greater than the second largest, then update the second largest
                 secondLargest = i; // If the current element is less than the first largest and greater than the second largest, then update the second largest to be the current element
             }
         }
