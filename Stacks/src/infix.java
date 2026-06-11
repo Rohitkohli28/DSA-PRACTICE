@@ -4,7 +4,7 @@ import java.util.*;
 public class infix {
 
     public static void main(String[] args) {
-        String str = "9-5+3*4/6";
+        String str = "9-(5+3)*4/6";
         Stack<Integer> val = new Stack<>();
         Stack<Character> op = new Stack<>();
 
@@ -14,17 +14,30 @@ public class infix {
             // 0 --> 48 and 9 --> 57
             if (ascii >= 48 && ascii <= 57){
                 val.push(ascii-48); // to convert char to int
-            } else if(op.size() == 0){
+            } else if(op.size() == 0 || ch == '(' || op.peek() == '('){
                 op.push(ch);
-            } else {
+            } else if (ch == ')'){
+                while(op.peek() != '('){
+                    // Work
+                    int v2 = val.pop();
+                    int v1 = val.pop();
+                    if(op.peek() == '-') val.push(v1-v2);
+                    if(op.peek() == '+') val.push(v1+v2);
+                    if(op.peek() == '*') val.push(v1*v2);
+                    if(op.peek() == '/') val.push(v1/v2);
+                    op.pop();
+                }
+                op.pop(); // to pop '('
+             }
+            else {
                 if(ch == '+' || ch == '-'){
                     // Work
                     int v2 = val.pop();
                     int v1 = val.pop();
                     if(op.peek() == '-') val.push(v1-v2);
-                    if (op.peek() == '+') val.push(v1+v2);
-                    if (op.peek() == '*') val.push(v1*v2);
-                    if (op.peek() == '/') val.push(v1/v2);
+                    if(op.peek() == '+') val.push(v1+v2);
+                    if(op.peek() == '*') val.push(v1*v2);
+                    if(op.peek() == '/') val.push(v1/v2);
                     op.pop();
                     op.push(ch);
                 }
@@ -34,9 +47,10 @@ public class infix {
                         // Work
                         int v2 = val.pop();
                         int v1 = val.pop();
-                        if (op.peek() == '*') val.push(v1 * v2);
-                        if (op.peek() == '/') val.push(v1 / v2);
+                        if(op.peek() == '*') val.push(v1 * v2);
+                        if(op.peek() == '/') val.push(v1 / v2);
                         op.pop();
+                        op.push(ch);
                     }
                     else op.push(ch);
                 }
@@ -44,13 +58,13 @@ public class infix {
 
         }
 
-        while(val.size() > 1){
+        while(!op.isEmpty()){
             int v2 = val.pop();
             int v1 = val.pop();
-            if (op.peek() == '-') val.push(v1-v2);
-            if (op.peek() == '+') val.push(v1+v2);
-            if (op.peek() == '*') val.push(v1*v2);
-            if (op.peek() == '/') val.push(v1/v2);
+            if(op.peek() == '-') val.push(v1-v2);
+            if(op.peek() == '+') val.push(v1+v2);
+            if(op.peek() == '*') val.push(v1*v2);
+            if(op.peek() == '/') val.push(v1/v2);
             op.pop();
          }
 
