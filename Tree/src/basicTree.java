@@ -24,7 +24,7 @@ class TreeOperations{
             return null;
         }
         TreeNode node = new TreeNode(data);
-        System.out.println("Current node is: " + data + " Enter the data for left node");
+        System.out.println("Current node is: " + data + "  Enter the data for left node");
         node.left = buildTree();
         System.out.println("Current node is: " + data + "Enter the data for right node");
         node.right = buildTree();
